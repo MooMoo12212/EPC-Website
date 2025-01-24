@@ -6,7 +6,13 @@
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background: linear-gradient(-45deg, #1a1a1a, #00FFAF, #0080FF, #2d2d2d);
+    background: linear-gradient(
+        -45deg, 
+        #1a1a1a, 
+        #00FFAF, 
+        #0080FF, 
+        #2d2d2d
+    );
     background-size: 400% 400%;
     animation: gradient-animation 15s ease infinite;
     color: #ffffff;
@@ -24,31 +30,55 @@ header {
     border-bottom: 2px solid #444;
 }
 
-header h1.ai-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    color: #00FFAF;
-    text-shadow: 0 0 10px #0080FF, 0 0 20px #00FFAF;
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+header .logo {
+    max-width: 150px;
+}
+
+header .logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+header h1 {
     margin: 0;
+    font-size: 2.8rem;
+    color: #00FFAF;
 }
 
-.futuristic-bg {
-    background-image: url('https://i.imgur.com/2r1kMjb.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 60px 20px;
+header p {
+    margin: 0;
+    color: #cccccc;
+    font-size: 1.2rem;
+}
+
+.hero {
     text-align: center;
+    padding: 60px 20px;
+    background: rgba(0,0,0,0.6);
 }
 
-.futuristic-border {
-    border: 2px solid rgba(0, 255, 175, 0.8);
-    box-shadow: 0 0 20px rgba(0, 255, 175, 0.5);
-    border-radius: 10px;
-    padding: 15px;
+.hero h2 {
+    font-size: 2.5rem;
+    color: #00FFAF;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #e1e1e1;
     margin-bottom: 20px;
 }
 
-.cta {
+.hero .cta {
     display: inline-block;
     padding: 15px 30px;
     font-size: 1rem;
@@ -57,18 +87,90 @@ header h1.ai-title {
     border: none;
     border-radius: 30px;
     text-decoration: none;
-    transition: background 0.3s ease-in-out, transform 0.2s;
+    transition: background 0.3s ease-in-out;
 }
 
-.cta:hover {
+.hero .cta:hover {
     background: linear-gradient(45deg, #00FFAF, #0066CC);
-    transform: scale(1.1);
+}
+
+.launch-banner {
+    background-color: #00FFAF;
+    color: #1a1a1a;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.tokenomics, .roadmap {
+    background: rgba(0,0,0,0.7);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.tokenomics h2, .roadmap h2 {
+    color: #00FFAF;
+    margin-bottom: 30px;
 }
 
 .tokenomics-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+}
+
+.tokenomics-item {
+    background-color: rgba(62, 62, 62, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tokenomics-item h3 {
+    color: #00FFAF;
+    margin-bottom: 10px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    background: rgba(0,0,0,0.7);
+}
+
+.feature {
+    background: rgba(62, 62, 62, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.feature h3 {
+    color: #00FFAF;
+    margin-bottom: 10px;
+}
+
+.roadmap-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.roadmap-item {
+    background-color: rgba(62, 62, 62, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    width: 22%;
+}
+
+.roadmap-item h3 {
+    color: #00FFAF;
+    margin-bottom: 10px;
 }
 
 footer {
@@ -78,8 +180,37 @@ footer {
     border-top: 2px solid #444;
 }
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    color: #00FFAF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.affiliations {
+    color: #cccccc;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.affiliations span {
+    color: #00FFAF;
+    margin: 0 5px;
+}
+
 footer p {
     margin: 0;
     font-size: 0.9rem;
     color: #cccccc;
+}
+
+footer a {
+    color: #00FFAF;
+    text-decoration: none;
 }
