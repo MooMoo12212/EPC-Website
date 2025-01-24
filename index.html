@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <svg class="network-background" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="glow">
+                <feGaussianBlur class="blur" result="coloredBlur" stdDeviation="4"></feGaussianBlur>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+            </filter>
+        </defs>
+    </svg>
+
     <header>
         <div class="header-content">
             <div class="logo">
@@ -106,5 +118,46 @@
         </div>
         <p>&copy; 2025 Epsilon Cipher. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function createNetworkBackground() {
+            const svg = document.querySelector('.network-background');
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+            for (let i = 0; i < 20; i++) {
+                const node = document.createElement('div');
+                node.classList.add('node');
+                node.style.width = `${Math.random() * 10 + 5}px`;
+                node.style.height = node.style.width;
+                node.style.left = `${Math.random() * width}px`;
+                node.style.top = `${Math.random() * height}px`;
+                document.body.appendChild(node);
+            }
+
+            const nodes = document.querySelectorAll('.node');
+            nodes.forEach((node, index) => {
+                if (index < nodes.length - 1) {
+                    const nextNode = nodes[index + 1];
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.classList.add('network-line');
+                    line.setAttribute('x1', node.offsetLeft + node.offsetWidth / 2);
+                    line.setAttribute('y1', node.offsetTop + node.offsetHeight / 2);
+                    line.setAttribute('x2', nextNode.offsetLeft + nextNode.offsetWidth / 2);
+                    line.setAttribute('y2', nextNode.offsetTop + nextNode.offsetHeight / 2);
+                    line.setAttribute('filter', 'url(#glow)');
+                    svg.appendChild(line);
+                }
+            });
+        }
+
+        window.addEventListener('load', createNetworkBackground);
+        window.addEventListener('resize', () => {
+            document.querySelector('.network-background').innerHTML = '';
+            document.querySelectorAll('.node').forEach(node => node.remove());
+            createNetworkBackground();
+        });
+    </script>
 </body>
 </html>
