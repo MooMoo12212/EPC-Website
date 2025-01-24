@@ -1,0 +1,173 @@
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Floating Words */
+.floating-words {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.floating-words span {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.15);
+    animation: float 10s linear infinite;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.floating-words span:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.floating-words span:nth-child(2) {
+    top: 50%;
+    left: 40%;
+    animation-delay: 3s;
+}
+
+.floating-words span:nth-child(3) {
+    top: 80%;
+    left: 70%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+header {
+    background-color: #20232a;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #444;
+}
+
+header .logo {
+    max-width: 80px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    color: #00FFAF;
+}
+
+header p {
+    margin: 0;
+    color: #cccccc;
+    font-size: 1.2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #3b3b3b, #1a1a1a);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #00FFAF;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #e1e1e1;
+    margin-bottom: 20px;
+}
+
+.hero .cta {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: linear-gradient(45deg, #00FFA3, #0080FF);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.hero .cta:hover {
+    background: linear-gradient(45deg, #00FFAF, #0066CC);
+}
+
+.launch-banner {
+    background-color: #00FFAF;
+    color: #1a1a1a;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #2d2d2d;
+}
+
+.feature {
+    background: #3e3e3e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.feature h3 {
+    color: #00FFAF;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #20232a;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #444;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+footer a {
+    color: #00FFAF;
+    text-decoration: none;
+}
